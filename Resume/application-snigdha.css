@@ -15167,10 +15167,14 @@ body.toolkit .typography__title {
   background-color: #fefde5 !important;
 }
 
-.sindha__header{
-    text-align: center;
+.sindha__header {
+  text-align: center;
 }
 
-.sindha__header h1{
-    margin-bottom: 0px;
+.sindha__header h1 {
+  margin-bottom: 0px;
+}
+
+.sindha__padding {
+  padding-bottom: 5px;
 }
