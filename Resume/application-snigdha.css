@@ -15182,3 +15182,8 @@ body.toolkit .typography__title {
 .sindha__padding {
   padding-bottom: 5px;
 }
+
+.sindha__padding__up {
+  padding-top: 5px;
+}
+
