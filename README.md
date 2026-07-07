@@ -1,1 +1,0 @@
-# dhatric.github.io
