@@ -1,0 +1,29 @@
+platform-engineering:
+  label: Platform Engineering
+  permalink: /platform-engineering
+  description: Posts about building developer platforms and internal tooling.
+
+distributed-systems:
+  label: Distributed Systems
+  permalink: /distributed-systems
+  description: Posts about distributed architecture, messaging, and scalability.
+
+java:
+  label: Java
+  permalink: /java
+  description: Java ecosystem, Spring Boot, and JVM topics.
+
+azure:
+  label: Azure
+  permalink: /azure
+  description: Microsoft Azure cloud, services, and infrastructure.
+
+workflow:
+  label: Workflow Automation
+  permalink: /workflow
+  description: Workflow engines, orchestration, and automation patterns.
+
+observability:
+  label: Observability
+  permalink: /observability
+  description: Monitoring, tracing, logging, and reliability engineering.
