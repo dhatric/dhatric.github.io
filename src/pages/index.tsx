@@ -31,21 +31,30 @@ function Hero() {
   return (
     <header className={`hero hero--primary ${styles.heroBanner}`}>
       <div className="container">
-        <h1 className="hero__title">Giridhar Dhatric</h1>
-        <p className="hero__subtitle">Staff Software Engineer</p>
+        <div className="eyebrow" style={{justifyContent: 'center', marginBottom: '1.5rem'}}>
+          <div className="live-dot" />
+          <span className="eyebrow-text">Designing at Scale</span>
+        </div>
+        <h1 className={styles.heroTitle}>Giridhar Dhatric</h1>
+        <p className={styles.heroSubtitle}>Staff Software Engineer</p>
         <p className={styles.heroSummary}>
           13 years designing cloud-native platforms, distributed systems, and workflow automation.
           I build reusable platform capabilities that let engineering teams ship at scale.
         </p>
-        <div className="cta-row">
-          <Link className="button button--primary button--lg" to="/projects">
+        <div className="cta-row" style={{marginTop: '2rem'}}>
+          <Link className="cta-btn" to="/projects">
             View Projects
           </Link>
-          <Link className="button button--secondary button--lg" to="/blog">
+          <Link
+            className="button button--secondary button--lg"
+            style={{borderRadius: '100px', padding: '12px 36px', border: '1px solid var(--blue-border)', background: 'transparent', color: 'var(--hero-text-color)'}}
+            to="/blog"
+          >
             Read Blog
           </Link>
           <a
             className="button button--outline button--secondary button--lg"
+            style={{borderRadius: '100px', padding: '12px 36px', borderColor: 'var(--blue-border)', color: 'var(--hero-text-color)'}}
             href="https://linkedin.com/in/dhatric"
             target="_blank"
             rel="noopener noreferrer"
@@ -54,17 +63,12 @@ function Hero() {
           </a>
           <a
             className="button button--outline button--secondary button--lg"
+            style={{borderRadius: '100px', padding: '12px 36px', borderColor: 'var(--blue-border)', color: 'var(--hero-text-color)'}}
             href="https://github.com/dhatric"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
-          </a>
-          <a
-            className="button button--outline button--secondary button--lg"
-            href="mailto:dhatric@gmail.com"
-          >
-            Email
           </a>
         </div>
       </div>
@@ -76,15 +80,26 @@ function Competencies() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <div className="eyebrow" style={{marginBottom: '0.75rem'}}>
+            <div className="eyebrow-line" />
+            <span className="eyebrow-text">Expertise</span>
+            <div className="eyebrow-line" />
+          </div>
           <h2>Core Competencies</h2>
-          <p>Areas where I bring deep expertise and a track record of delivery.</p>
+          <p style={{color: 'var(--white-dim)'}}>Areas where I bring deep expertise and a track record of delivery.</p>
         </div>
         <div className="competency-grid">
           {competencies.map(({area, skills}) => (
-            <div className="competency-card" key={area}>
-              <h4>{area}</h4>
-              <p>{skills}</p>
+            <div className="competency-card" key={area} style={{padding: '1.75rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+              <h4 style={{fontSize: '1.2rem', margin: 0}}>{area}</h4>
+              <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.4rem'}}>
+                {skills.split(', ').map((skill) => (
+                  <span className="tag-pill" key={skill} style={{margin: 0, fontSize: '0.75rem', padding: '0.3rem 0.7rem'}}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -97,7 +112,12 @@ function Experience() {
   return (
     <section className={`${styles.section} ${styles.sectionAlt}`}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <div className="eyebrow" style={{marginBottom: '0.75rem'}}>
+            <div className="eyebrow-line" />
+            <span className="eyebrow-text">Timeline</span>
+            <div className="eyebrow-line" />
+          </div>
           <h2>Career Highlights</h2>
         </div>
         <div className={styles.timeline}>

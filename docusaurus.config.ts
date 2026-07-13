@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -52,7 +52,7 @@ const config: Config = {
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Giridhar Dhatric',
@@ -61,10 +61,10 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {to: '/projects', label: 'Projects', position: 'left'},
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/projects', label: 'Projects', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://linkedin.com/in/dhatric',
+          href: 'https://www.linkedin.com/in/giridhar-dhatric/',
           label: 'LinkedIn',
           position: 'right',
         },
@@ -81,9 +81,9 @@ const config: Config = {
         {
           title: 'Site',
           items: [
-            {label: 'Home', to: '/'},
-            {label: 'Projects', to: '/projects'},
-            {label: 'Blog', to: '/blog'},
+            { label: 'Home', to: '/' },
+            { label: 'Projects', to: '/projects' },
+            { label: 'Blog', to: '/blog' },
           ],
         },
         {

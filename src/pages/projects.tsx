@@ -71,20 +71,26 @@ function TagPill({label}: {label: string}) {
   return <span className="tag-pill">{label}</span>;
 }
 
-function ProjectCard({project}: {project: Project}) {
+function ProjectCard({project, index}: {project: Project; index: number}) {
   return (
     <div className="project-card">
+      <div className="card-ghost">0{index + 1}</div>
       <div>
-        <h3>{project.title}</h3>
-        <div style={{fontSize: '0.85rem', color: 'var(--ifm-color-content-secondary)', marginBottom: '0.5rem'}}>
+        <div style={{marginBottom: '0.5rem'}}>
+          <span className="pill" style={{fontSize: '11px', textTransform: 'uppercase', padding: '4px 12px'}}>
+            Project 0{index + 1}
+          </span>
+        </div>
+        <h3 style={{fontSize: '1.25rem', marginTop: '0.5rem'}}>{project.title}</h3>
+        <div style={{fontSize: '0.85rem', color: 'var(--card-secondary-text)', marginBottom: '0.5rem', fontWeight: 600}}>
           {project.company} · {project.period}
         </div>
       </div>
-      <p style={{margin: 0, fontSize: '0.95rem', lineHeight: '1.65'}}>{project.description}</p>
+      <p style={{margin: 0, fontSize: '0.92rem', lineHeight: '1.6'}}>{project.description}</p>
       {project.impact && (
-        <div className="impact">▲ {project.impact}</div>
+        <div className="impact" style={{color: 'var(--blue)', fontWeight: 700}}>▲ {project.impact}</div>
       )}
-      <div className="tags">
+      <div className="tags" style={{marginTop: '1rem'}}>
         {project.tags.map((tag) => (
           <TagPill key={tag} label={tag} />
         ))}
@@ -103,14 +109,14 @@ export default function Projects(): React.JSX.Element {
         <div className="container">
           <div className="section-header">
             <h1>Projects</h1>
-            <p>
+            <p style={{color: 'var(--white-dim)'}}>
               A selection of platforms and systems I've architected and delivered across
               distributed systems, workflow automation, and commerce engineering.
             </p>
           </div>
           <div className="project-grid">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
+            {projects.map((project, index) => (
+              <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
         </div>
