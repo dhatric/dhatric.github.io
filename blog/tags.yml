@@ -27,3 +27,28 @@ observability:
   label: Observability
   permalink: /observability
   description: Monitoring, tracing, logging, and reliability engineering.
+
+experience:
+  label: Experience
+  permalink: /experience
+  description: Professional experience and engineering lessons.
+
+jasperreports:
+  label: JasperReports
+  permalink: /jasperreports
+  description: Designing and debugging JasperReports templating.
+
+raspberry-pi:
+  label: Raspberry Pi
+  permalink: /raspberry-pi
+  description: Single-board computers and hardware hacking.
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: Workflow automation, script bots, and scripting.
+
+python:
+  label: Python
+  permalink: /python
+  description: Python programming language and tooling.

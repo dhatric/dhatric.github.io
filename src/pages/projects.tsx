@@ -16,54 +16,48 @@ const projects: Project[] = [
     company: 'Blue Yonder',
     period: '2024 – Present',
     description:
-      'Architected a multi-tenant workflow platform using Flowable that enables engineering teams to rapidly design, deploy, version, and execute enterprise workflows. Built with secure tenant isolation, governance controls, and Azure Storage integrations for self-service workflow development.',
-    impact: 'Adopted across multiple product teams; reduced workflow implementation complexity significantly.',
-    tags: ['Java', 'Spring Boot', 'Flowable', 'Azure', 'Multi-tenant', 'Kubernetes', 'OpenTelemetry'],
-  },
-  {
-    title: 'Platform Observability & Performance',
-    company: 'Blue Yonder',
-    period: '2024 – Present',
-    description:
-      'Designed end-to-end observability for the workflow platform using OpenTelemetry, ELK Stack, and Prometheus with Grafana dashboards. Performed database and asynchronous workload tuning to improve operational reliability under peak traffic.',
-    impact: 'Reduced system diagnostic times; improved reliability at peak load.',
-    tags: ['OpenTelemetry', 'ELK Stack', 'Prometheus', 'Grafana', 'Performance Tuning'],
-  },
-  {
-    title: 'Omnichannel B2B Commerce Platform',
-    company: 'Deloitte',
-    period: '2015 – 2021',
-    description:
-      'Led architecture and delivery of a cloud-ready omnichannel commerce platform that unified customer ordering across multiple sales channels. Delivered reusable backend services and high-performance REST APIs optimized for enterprise transaction throughput.',
-    impact: '$5M+ in first-year business revenue.',
-    tags: ['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'SQL Server', 'B2B Commerce'],
-  },
-  {
-    title: 'Subscription Management Platform',
-    company: 'Deloitte',
-    period: '2015 – 2021',
-    description:
-      'Designed and developed a subscription management platform using Spring Boot and RabbitMQ enabling asynchronous order processing and scalable event-driven communication between services.',
-    impact: '15% increase in recurring order volume.',
-    tags: ['Java', 'Spring Boot', 'RabbitMQ', 'Event-Driven', 'PostgreSQL'],
+      'Architected a cloud-native workflow platform using Flowable, enabling engineering teams to rapidly design, deploy, version, and execute enterprise workflows with secure tenant isolation, authentication, and governance controls. Designed end-to-end platform observability and optimized scalability, database, and asynchronous workloads.',
+    impact: 'Enabled 20+ teams (reducing feature time-to-market by 40% and onboarding by 50%), reduced MTTD by 45%, and improved database query throughput by 35% with 99.99% operational reliability.',
+    tags: [
+      'Java',
+      'Spring Boot',
+      'Flowable',
+      'Azure',
+      'Kubernetes',
+      'OpenTelemetry',
+      'ELK Stack',
+      'Prometheus',
+      'Grafana',
+      'Database Optimization',
+      'Performance Tuning',
+    ],
   },
   {
     title: 'Automated Inventory Replenishment',
     company: 'Deloitte',
     period: '2015 – 2021',
     description:
-      'Architected a replenishment platform that transformed demand forecasting into an event-driven workflow, integrating with inventory and ordering systems to automate stock replenishment decisions.',
-    impact: '20% reduction in stock shortages; improved inventory availability and sales performance.',
-    tags: ['Java', 'Spring Boot', 'Apache Kafka', 'Event-Driven', 'Workflow Automation'],
+      'Architected an automated inventory replenishment platform that transformed demand forecasting into an event-driven workflow, integrating complex business forecasting requirements into scalable technical solutions.',
+    impact: 'Reduced stock shortages by 20% while improving inventory availability and sales performance.',
+    tags: ['Java', 'Spring Boot', 'Event-Driven', 'Workflow Automation', 'Demand Forecasting'],
   },
   {
-    title: 'Enterprise Payment Gateway Modernization',
+    title: 'Subscription Management Platform',
+    company: 'Deloitte',
+    period: '2015 – 2021',
+    description:
+      'Designed and developed a subscription management platform using Spring Boot and RabbitMQ, enabling asynchronous order processing and scalable event-driven communication.',
+    impact: 'Drove a 15% increase in recurring order volume.',
+    tags: ['Java', 'Spring Boot', 'RabbitMQ', 'Event-Driven', 'Asynchronous Processing'],
+  },
+  {
+    title: 'Reusable B2C Commerce Capabilities',
     company: 'Infosys',
     period: '2011 – 2015',
     description:
-      'Modernized and enhanced enterprise payment gateway applications built on C and HP NonStop (Tandem), improving transaction reliability and operational support for high-volume payment processing systems.',
-    impact: 'Improved production stability for high-volume payment processing.',
-    tags: ['C', 'HP NonStop', 'Tandem', 'Payment Processing', 'Enterprise Systems'],
+      'Developed reusable commerce capabilities on SAP Commerce (Hybris) for large-scale B2C retail platforms, including configurable product catalogs, product bundling, and order management features.',
+    impact: 'Enabled modular and configurable product features across major retail clients.',
+    tags: ['SAP Commerce (Hybris)', 'Java', 'B2C Commerce', 'Order Management'],
   },
 ];
 

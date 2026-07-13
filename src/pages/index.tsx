@@ -15,15 +15,15 @@ const competencies = [
   },
   {
     area: 'Cloud & Infrastructure',
-    skills: 'Microsoft Azure, Kubernetes, Docker, Azure Storage / Event Hubs / Functions, CI/CD, Infrastructure Automation',
+    skills: 'Microsoft Azure, Kubernetes, Docker, Azure Storage/Event Hubs/Functions, CI/CD, Infrastructure Automation',
   },
   {
     area: 'Data & Messaging',
     skills: 'Apache Kafka, RabbitMQ, SQL Server, PostgreSQL, MongoDB',
   },
   {
-    area: 'Leadership',
-    skills: 'Technical Leadership, Mentorship, Engineering Governance, Cross-functional Collaboration',
+    area: 'Leadership & Governance',
+    skills: 'Technical Leadership, Mentorship, Engineering Governance',
   },
 ];
 
@@ -38,8 +38,8 @@ function Hero() {
         <h1 className={styles.heroTitle}>Giridhar Dhatric</h1>
         <p className={styles.heroSubtitle}>Staff Software Engineer</p>
         <p className={styles.heroSummary}>
-          13 years designing cloud-native platforms, distributed systems, and workflow automation.
-          I build reusable platform capabilities that let engineering teams ship at scale.
+          Designing cloud-native platforms, distributed systems, and workflow automation.
+          Bridging robust backend architectures with emerging RAG and agentic workflows to enable engineering teams to build at scale.
         </p>
         <div className="cta-row" style={{marginTop: '2rem'}}>
           <Link className="cta-btn" to="/projects">
@@ -55,7 +55,7 @@ function Hero() {
           <a
             className="button button--outline button--secondary button--lg"
             style={{borderRadius: '100px', padding: '12px 36px', borderColor: 'var(--blue-border)', color: 'var(--hero-text-color)'}}
-            href="https://linkedin.com/in/dhatric"
+            href="https://linkedin.com/in/giridhar-dhatric"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -128,9 +128,7 @@ function Experience() {
             </div>
             <div className={styles.timelineRole}>Staff Software Engineer</div>
             <p>
-              Architected a cloud-native workflow platform on Flowable with multi-tenant isolation,
-              Azure integrations, and end-to-end observability using OpenTelemetry + ELK. Standardized
-              developer patterns across product teams and drove platform strategy.
+              Architected a Flowable-based cloud-native workflow platform for 20+ teams, cutting feature time-to-market by 40%. Engineered a secure, multi-tenant execution framework, and designed platform observability using OpenTelemetry, ELK, and Prometheus (reducing MTTD by 45%).
             </p>
           </div>
           <div className={styles.timelineItem}>
@@ -140,9 +138,7 @@ function Experience() {
             </div>
             <div className={styles.timelineRole}>Senior Software Engineer</div>
             <p>
-              Led architecture and delivery of an omnichannel B2B commerce platform generating{' '}
-              <strong>$5M+ in first-year revenue</strong>. Built subscription management and
-              inventory replenishment platforms, cutting stock shortages by 20%.
+              Architected an event-driven inventory replenishment platform that reduced stock shortages by 20%. Designed a subscription management platform using Spring Boot and RabbitMQ, driving a 15% increase in recurring order volume.
             </p>
           </div>
           <div className={styles.timelineItem}>
@@ -152,8 +148,7 @@ function Experience() {
             </div>
             <div className={styles.timelineRole}>Software Engineer</div>
             <p>
-              Developed commerce capabilities on SAP Commerce (Hybris) and modernized enterprise
-              payment gateway applications on HP NonStop for high-volume transaction processing.
+              Developed reusable commerce capabilities on SAP Commerce (Hybris), enabling configurable product catalog, product bundling, and order management features for B2C retail platforms.
             </p>
           </div>
         </div>

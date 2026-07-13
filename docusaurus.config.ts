@@ -11,6 +11,10 @@ const config: Config = {
     v4: true,
   },
 
+  markdown: {
+    format: 'md',
+  },
+
   url: 'https://giridhardhatric.me',
   baseUrl: '/',
 
@@ -91,7 +95,7 @@ const config: Config = {
           items: [
             {
               label: 'LinkedIn',
-              href: 'https://linkedin.com/in/dhatric',
+              href: 'https://linkedin.com/in/giridhar-dhatric',
             },
             {
               label: 'GitHub',
