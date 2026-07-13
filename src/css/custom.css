@@ -326,3 +326,9 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02
   .module-card { padding: 28px 24px; }
   .card-ghost  { font-size: 100px; }
 }
+
+/* ── BLOG POSTS LIST SEPARATOR ── */
+main article:not(:last-child) {
+  border-bottom: 1px solid var(--blue-border);
+  padding-bottom: 3rem;
+}
