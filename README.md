@@ -31,7 +31,10 @@ Push to `main` — the GitHub Actions workflow (`.github/workflows/deploy.yml`) 
 | Route | File | Description |
 |---|---|---|
 | `/` | `src/pages/index.tsx` | Hero, core competencies, career timeline |
-| `/projects` | `src/pages/projects.tsx` | Project cards with tags and impact metrics |
+| `/projects` | `src/pages/projects.tsx` | Professional project cards with tags and impact metrics |
+| `/personal-projects` | `src/pages/personal-projects.tsx` | Open-source / side project cards |
+| `/home-server` | `src/pages/home-server.tsx` | Self-hosted homelab service showcase |
+| `/books` | `src/pages/books.tsx` | Reading list (Tech Books, Non-Fiction, Fiction) |
 | `/blog` | `blog/` | Technical blog posts (Markdown) |
 
 **Adding a blog post:** Create a new file in `blog/` following the naming pattern `YYYY-MM-DD-slug.md`. Use `authors: [giri]` in the front matter.
@@ -50,14 +53,23 @@ dhatric.github.io/
 │   ├── tags.yml              # Blog tag definitions
 │   └── YYYY-MM-DD-*.md       # Blog posts
 ├── src/
+│   ├── components/
+│   │   ├── Card.tsx           # Shared content card + TagPill (reused across pages)
+│   │   └── PageHeader.tsx     # Shared centered page header
 │   ├── css/
 │   │   └── custom.css        # Global styles, CSS variables, component classes
+│   ├── types/
+│   │   └── card.ts           # Shared card content type
 │   └── pages/
 │       ├── index.tsx         # Home page
 │       ├── index.module.css  # Home page scoped styles
-│       └── projects.tsx      # Projects page
+│       ├── projects.tsx      # Projects page
+│       ├── personal-projects.tsx  # Personal / open-source projects page
+│       ├── home-server.tsx   # Home server showcase page
+│       └── books.tsx         # Books page
 ├── static/
-│   └── CNAME                 # Custom domain for GitHub Pages
+│   ├── CNAME                 # Custom domain for GitHub Pages
+│   └── robots.txt            # Crawler allow rules + sitemap reference
 ├── docusaurus.config.ts      # Site configuration, navbar, footer, theme
 ├── package.json
 └── tsconfig.json
@@ -92,7 +104,7 @@ After adding the records, enable **"Enforce HTTPS"** in the GitHub Pages reposit
 The main configuration file is `docusaurus.config.ts`. Notable settings:
 
 - `colorMode.defaultMode: 'dark'` — dark theme by default
-- `colorMode.respectPrefersColorScheme: true` — respects OS preference
+- `colorMode.respectPrefersColorScheme: false` — the site always starts in dark mode regardless of OS preference
 - `docs: false` — the docs plugin is disabled; only blog and custom pages are used
 - `organizationName: 'dhatric'`, `projectName: 'dhatric.github.io'` — used by the deploy command
 
