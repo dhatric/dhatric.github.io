@@ -53,6 +53,7 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
+    metadata: [{ property: 'og:type', content: 'website' }],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,

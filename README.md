@@ -68,7 +68,8 @@ dhatric.github.io/
 │       ├── home-server.tsx   # Home server showcase page
 │       └── books.tsx         # Books page
 ├── static/
-│   └── CNAME                 # Custom domain for GitHub Pages
+│   ├── CNAME                 # Custom domain for GitHub Pages
+│   └── robots.txt            # Crawler allow rules + sitemap reference
 ├── docusaurus.config.ts      # Site configuration, navbar, footer, theme
 ├── package.json
 └── tsconfig.json
