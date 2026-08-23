@@ -375,23 +375,6 @@ main article:not(:last-child) {
   color: var(--card-text-color);
 }
 
-.book-author {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--card-secondary-text);
-}
-
-.book-desc {
-  margin: 0;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--white-dim);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 .book-card .tags {
   margin-top: auto;
 }

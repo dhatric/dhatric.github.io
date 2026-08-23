@@ -1,15 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import { TagPill } from '../components/Card';
 import PageHeader from '../components/PageHeader';
 
 interface Book {
   title: string;
-  author: string;
   /** Path to the cover image under /static/img/books/. */
   cover: string;
-  description: string;
-  tags: string[];
 }
 
 interface BookSection {
@@ -25,38 +21,10 @@ const sections: BookSection[] = [
     title: 'Tech Books',
     description: 'Engineering, architecture, and systems reading that shapes how I build platforms.',
     books: [
-      {
-        title: 'Designing Data-Intensive Applications',
-        author: 'Martin Kleppmann',
-        cover: 'img/books/ddia.jpg',
-        description:
-          'The definitive guide to the principles behind data systems — storage, replication, partitioning, and distributed consistency. The mental model I return to when making platform architecture decisions.',
-        tags: ['Distributed Systems', 'Data', 'Architecture'],
-      },
-      {
-        title: 'Building Microservices',
-        author: 'Sam Newman',
-        cover: 'img/books/building-microservices.jpg',
-        description:
-          'A practical, end-to-end look at designing, scaling, and operating microservice architectures — boundaries, deployment, and the organizational tradeoffs that come with them.',
-        tags: ['Microservices', 'Architecture', 'SOA'],
-      },
-      {
-        title: 'Effective Java',
-        author: 'Joshua Bloch',
-        cover: 'img/books/effective-java.jpg',
-        description:
-          'Timeless best practices for writing clear, correct, and maintainable Java. A staple for backend engineers working in the JVM ecosystem.',
-        tags: ['Java', 'Best Practices'],
-      },
-      {
-        title: 'Site Reliability Engineering',
-        author: 'Betsy Beyer, Chris Jones, Jennifer Petoff & Niall Richard Murphy',
-        cover: 'img/books/sre.jpg',
-        description:
-          'The Google SRE book — how to run production systems with reliability as a first-class goal, from SLIs/SLOs to incident response and observability.',
-        tags: ['SRE', 'Observability', 'Reliability'],
-      },
+      { title: 'Designing Data-Intensive Applications', cover: 'img/books/ddia.jpg' },
+      { title: 'Building Microservices', cover: 'img/books/building-microservices.jpg' },
+      { title: 'Effective Java', cover: 'img/books/effective-java.jpg' },
+      { title: 'Site Reliability Engineering', cover: 'img/books/sre.jpg' },
     ],
   },
   {
@@ -64,38 +32,10 @@ const sections: BookSection[] = [
     title: 'Non-Fiction',
     description: 'Books on leadership, productivity, and how complex human systems really work.',
     books: [
-      {
-        title: 'The Phoenix Project',
-        author: 'Gene Kim, Kevin Behr & George Spafford',
-        cover: 'img/books/phoenix-project.jpg',
-        description:
-          'A novel about IT, DevOps, and organizational change. Reads like a story but teaches the principles of flow, feedback, and continuous improvement in engineering orgs.',
-        tags: ['DevOps', 'Leadership', 'Organizational Change'],
-      },
-      {
-        title: 'Deep Work',
-        author: 'Cal Newport',
-        cover: 'img/books/deep-work.jpg',
-        description:
-          'A compelling case for focused, distraction-free work and practical rules for building it into your day — essential for anyone doing deep engineering or architecture.',
-        tags: ['Productivity', 'Focus', 'Career'],
-      },
-      {
-        title: 'The Pragmatic Programmer',
-        author: 'Andrew Hunt & David Thomas',
-        cover: 'img/books/pragmatic-programmer.jpg',
-        description:
-          'A classic collection of practical tips and mindset shifts for software craftspeople — from code maintenance to personal responsibility and career ownership.',
-        tags: ['Craftsmanship', 'Career', 'Mindset'],
-      },
-      {
-        title: 'Thinking in Systems',
-        author: 'Donella H. Meadows',
-        cover: 'img/books/thinking-in-systems.jpg',
-        description:
-          'A clear introduction to systems thinking — stocks, flows, feedback loops, and leverage points. Invaluable for understanding and improving complex platform ecosystems.',
-        tags: ['Systems Thinking', 'Strategy', 'Leadership'],
-      },
+      { title: 'The Phoenix Project', cover: 'img/books/phoenix-project.jpg' },
+      { title: 'Deep Work', cover: 'img/books/deep-work.jpg' },
+      { title: 'The Pragmatic Programmer', cover: 'img/books/pragmatic-programmer.jpg' },
+      { title: 'Thinking in Systems', cover: 'img/books/thinking-in-systems.jpg' },
     ],
   },
   {
@@ -103,54 +43,19 @@ const sections: BookSection[] = [
     title: 'Fiction',
     description: 'Novels and stories I read for fun — and the occasional good idea that leaks into work.',
     books: [
-      {
-        title: 'Project Hail Mary',
-        author: 'Andy Weir',
-        cover: 'img/books/project-hail-mary.jpg',
-        description:
-          'A lone astronaut, a lost memory, and an impossible problem to solve. Pure, smart problem-solving wrapped in a wildly fun story.',
-        tags: ['Sci-Fi', 'Adventure'],
-      },
-      {
-        title: 'The Three-Body Problem',
-        author: 'Liu Cixin',
-        cover: 'img/books/three-body-problem.jpg',
-        description:
-          'A sweeping hard-science-fiction trilogy about first contact and the physics — and politics — of the universe. Big ideas and bigger stakes.',
-        tags: ['Sci-Fi', 'Hard Science'],
-      },
-      {
-        title: 'The Name of the Wind',
-        author: 'Patrick Rothfuss',
-        cover: 'img/books/name-of-the-wind.jpg',
-        description:
-          'A beautifully written fantasy epic about a gifted young man and the truth behind his legend. Rich prose and a deeply immersive world.',
-        tags: ['Fantasy', 'Epic'],
-      },
-      {
-        title: 'Dune',
-        author: 'Frank Herbert',
-        cover: 'img/books/dune.jpg',
-        description:
-          'The classic of ecological and political sci-fi — a desert planet, a messiah figure, and a story about power, religion, and survival.',
-        tags: ['Sci-Fi', 'Classic', 'Politics'],
-      },
+      { title: 'Project Hail Mary', cover: 'img/books/project-hail-mary.jpg' },
+      { title: 'The Three-Body Problem', cover: 'img/books/three-body-problem.jpg' },
+      { title: 'The Name of the Wind', cover: 'img/books/name-of-the-wind.jpg' },
+      { title: 'Dune', cover: 'img/books/dune.jpg' },
     ],
   },
 ];
 
 function BookCard({ book }: { book: Book }) {
   return (
-    <article className="book-card" aria-label={`${book.title} by ${book.author}`}>
+    <article className="book-card" aria-label={book.title}>
       <img className="book-cover" src={book.cover} alt={`Cover of ${book.title}`} loading="lazy" />
       <h3 className="book-title">{book.title}</h3>
-      <div className="book-author">{book.author}</div>
-      <p className="book-desc">{book.description}</p>
-      <div className="tags">
-        {book.tags.map((tag) => (
-          <TagPill key={tag} label={tag} />
-        ))}
-      </div>
     </article>
   );
 }
