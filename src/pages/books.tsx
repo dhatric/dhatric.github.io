@@ -1,14 +1,22 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import { Card } from '../components/Card';
+import { TagPill } from '../components/Card';
 import PageHeader from '../components/PageHeader';
-import type { CardItem } from '../types/card';
+
+interface Book {
+  title: string;
+  author: string;
+  /** Path to the cover image under /static/img/books/. */
+  cover: string;
+  description: string;
+  tags: string[];
+}
 
 interface BookSection {
   key: string;
   title: string;
   description: string;
-  books: CardItem[];
+  books: Book[];
 }
 
 const sections: BookSection[] = [
@@ -19,28 +27,32 @@ const sections: BookSection[] = [
     books: [
       {
         title: 'Designing Data-Intensive Applications',
-        meta: 'Martin Kleppmann',
+        author: 'Martin Kleppmann',
+        cover: 'img/books/ddia.jpg',
         description:
           'The definitive guide to the principles behind data systems — storage, replication, partitioning, and distributed consistency. The mental model I return to when making platform architecture decisions.',
         tags: ['Distributed Systems', 'Data', 'Architecture'],
       },
       {
         title: 'Building Microservices',
-        meta: 'Sam Newman',
+        author: 'Sam Newman',
+        cover: 'img/books/building-microservices.jpg',
         description:
           'A practical, end-to-end look at designing, scaling, and operating microservice architectures — boundaries, deployment, and the organizational tradeoffs that come with them.',
         tags: ['Microservices', 'Architecture', 'SOA'],
       },
       {
         title: 'Effective Java',
-        meta: 'Joshua Bloch',
+        author: 'Joshua Bloch',
+        cover: 'img/books/effective-java.jpg',
         description:
           'Timeless best practices for writing clear, correct, and maintainable Java. A staple for backend engineers working in the JVM ecosystem.',
         tags: ['Java', 'Best Practices'],
       },
       {
         title: 'Site Reliability Engineering',
-        meta: 'Betsy Beyer, Chris Jones, Jennifer Petoff & Niall Richard Murphy',
+        author: 'Betsy Beyer, Chris Jones, Jennifer Petoff & Niall Richard Murphy',
+        cover: 'img/books/sre.jpg',
         description:
           'The Google SRE book — how to run production systems with reliability as a first-class goal, from SLIs/SLOs to incident response and observability.',
         tags: ['SRE', 'Observability', 'Reliability'],
@@ -54,28 +66,32 @@ const sections: BookSection[] = [
     books: [
       {
         title: 'The Phoenix Project',
-        meta: 'Gene Kim, Kevin Behr & George Spafford',
+        author: 'Gene Kim, Kevin Behr & George Spafford',
+        cover: 'img/books/phoenix-project.jpg',
         description:
           'A novel about IT, DevOps, and organizational change. Reads like a story but teaches the principles of flow, feedback, and continuous improvement in engineering orgs.',
         tags: ['DevOps', 'Leadership', 'Organizational Change'],
       },
       {
         title: 'Deep Work',
-        meta: 'Cal Newport',
+        author: 'Cal Newport',
+        cover: 'img/books/deep-work.jpg',
         description:
           'A compelling case for focused, distraction-free work and practical rules for building it into your day — essential for anyone doing deep engineering or architecture.',
         tags: ['Productivity', 'Focus', 'Career'],
       },
       {
         title: 'The Pragmatic Programmer',
-        meta: 'Andrew Hunt & David Thomas',
+        author: 'Andrew Hunt & David Thomas',
+        cover: 'img/books/pragmatic-programmer.jpg',
         description:
           'A classic collection of practical tips and mindset shifts for software craftspeople — from code maintenance to personal responsibility and career ownership.',
         tags: ['Craftsmanship', 'Career', 'Mindset'],
       },
       {
         title: 'Thinking in Systems',
-        meta: 'Donella H. Meadows',
+        author: 'Donella H. Meadows',
+        cover: 'img/books/thinking-in-systems.jpg',
         description:
           'A clear introduction to systems thinking — stocks, flows, feedback loops, and leverage points. Invaluable for understanding and improving complex platform ecosystems.',
         tags: ['Systems Thinking', 'Strategy', 'Leadership'],
@@ -89,28 +105,32 @@ const sections: BookSection[] = [
     books: [
       {
         title: 'Project Hail Mary',
-        meta: 'Andy Weir',
+        author: 'Andy Weir',
+        cover: 'img/books/project-hail-mary.jpg',
         description:
           'A lone astronaut, a lost memory, and an impossible problem to solve. Pure, smart problem-solving wrapped in a wildly fun story.',
         tags: ['Sci-Fi', 'Adventure'],
       },
       {
         title: 'The Three-Body Problem',
-        meta: 'Liu Cixin',
+        author: 'Liu Cixin',
+        cover: 'img/books/three-body-problem.jpg',
         description:
           'A sweeping hard-science-fiction trilogy about first contact and the physics — and politics — of the universe. Big ideas and bigger stakes.',
         tags: ['Sci-Fi', 'Hard Science'],
       },
       {
         title: 'The Name of the Wind',
-        meta: 'Patrick Rothfuss',
+        author: 'Patrick Rothfuss',
+        cover: 'img/books/name-of-the-wind.jpg',
         description:
           'A beautifully written fantasy epic about a gifted young man and the truth behind his legend. Rich prose and a deeply immersive world.',
         tags: ['Fantasy', 'Epic'],
       },
       {
         title: 'Dune',
-        meta: 'Frank Herbert',
+        author: 'Frank Herbert',
+        cover: 'img/books/dune.jpg',
         description:
           'The classic of ecological and political sci-fi — a desert planet, a messiah figure, and a story about power, religion, and survival.',
         tags: ['Sci-Fi', 'Classic', 'Politics'],
@@ -118,6 +138,22 @@ const sections: BookSection[] = [
     ],
   },
 ];
+
+function BookCard({ book }: { book: Book }) {
+  return (
+    <article className="book-card" aria-label={`${book.title} by ${book.author}`}>
+      <img className="book-cover" src={book.cover} alt={`Cover of ${book.title}`} loading="lazy" />
+      <h3 className="book-title">{book.title}</h3>
+      <div className="book-author">{book.author}</div>
+      <p className="book-desc">{book.description}</p>
+      <div className="tags">
+        {book.tags.map((tag) => (
+          <TagPill key={tag} label={tag} />
+        ))}
+      </div>
+    </article>
+  );
+}
 
 export default function Books(): React.JSX.Element {
   return (
@@ -142,9 +178,9 @@ export default function Books(): React.JSX.Element {
                   </p>
                 </div>
 
-                <div className="project-grid">
-                  {section.books.map((book, index) => (
-                    <Card key={book.title} item={book} index={index} kind="Book" />
+                <div className="book-grid">
+                  {section.books.map((book) => (
+                    <BookCard key={book.title} book={book} />
                   ))}
                 </div>
               </section>

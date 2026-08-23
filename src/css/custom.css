@@ -334,3 +334,65 @@ main article:not(:last-child) {
   border-bottom: 1px solid var(--blue-border);
   padding-bottom: 3rem;
 }
+
+/* ── BOOK COVERS ── */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.75rem;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: var(--card-border);
+  border-radius: 18px;
+  background: var(--card-background);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--card-hover-shadow);
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--blue-border);
+  display: block;
+}
+
+.book-title {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--card-text-color);
+}
+
+.book-author {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--card-secondary-text);
+}
+
+.book-desc {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--white-dim);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-card .tags {
+  margin-top: auto;
+}
+
