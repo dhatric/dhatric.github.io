@@ -19,7 +19,7 @@ const personalProjects: CardItem[] = [
     title: 'GoogleDoodle Automator',
     meta: 'Content Pipeline / Automation · 2023 – Present',
     description:
-      'An automated pipeline that monitors and extracts the latest Google Doodles, synthesizes educational/informational video reviews using automated assets, and uploads them directly to YouTube.',
+      'An automated pipeline that monitors and extracts the latest Google Doodles, auto-generates educational/informational video reviews from collected assets, and uploads them directly to YouTube.',
     impact: 'Grew a YouTube community to over 17,500 subscribers with fully hands-free content generation.',
     tags: ['Python', 'YouTube API', 'Video Automation', 'Web Scraping', 'Automation Pipeline'],
     link: 'https://www.youtube.com/@GoogleDoodleCatalog',
@@ -41,7 +41,7 @@ export default function PersonalProjects(): React.JSX.Element {
           />
           <div className="project-grid">
             {personalProjects.map((project, index) => (
-              <Card key={project.title} item={project} index={index} kind="Pet Project" />
+              <Card key={project.title} item={project} index={index} kind="Personal Project" />
             ))}
           </div>
         </div>

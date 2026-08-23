@@ -35,6 +35,7 @@ Push to `main` — the GitHub Actions workflow (`.github/workflows/deploy.yml`) 
 | `/personal-projects` | `src/pages/personal-projects.tsx` | Open-source / side project cards |
 | `/home-server` | `src/pages/home-server.tsx` | Self-hosted homelab service showcase |
 | `/books` | `src/pages/books.tsx` | Reading list (Tech Books, Non-Fiction, Fiction) |
+| `/resume` | `src/pages/resume.mdx` | Full resume, with downloadable PDF (`static/Giridhar_Dhatric_Resume.pdf`) |
 | `/blog` | `blog/` | Technical blog posts (Markdown) |
 
 **Adding a blog post:** Create a new file in `blog/` following the naming pattern `YYYY-MM-DD-slug.md`. Use `authors: [giri]` in the front matter.
@@ -66,7 +67,8 @@ dhatric.github.io/
 │       ├── projects.tsx      # Projects page
 │       ├── personal-projects.tsx  # Personal / open-source projects page
 │       ├── home-server.tsx   # Home server showcase page
-│       └── books.tsx         # Books page
+│       ├── books.tsx         # Books page
+│       └── resume.mdx        # Resume page
 ├── static/
 │   ├── CNAME                 # Custom domain for GitHub Pages
 │   └── robots.txt            # Crawler allow rules + sitemap reference
