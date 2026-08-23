@@ -1,0 +1,49 @@
+# Giridhar Dhatric
+
+> Staff Software Engineer — Cloud-Native Platforms, Distributed Systems, and Workflow Automation.
+> Hyderabad, India. Designing cloud-native platforms, distributed systems, and workflow automation.
+
+## Key topics
+
+- Cloud-native platforms and multi-tenant SaaS
+- Distributed systems and event-driven architecture
+- Workflow orchestration (Flowable / BPMN)
+- Java, Spring Boot, and backend engineering
+- Microsoft Azure, Kubernetes, Docker
+- Observability (OpenTelemetry, ELK, Prometheus, Grafana)
+
+## Experience
+
+- Staff Software Engineer at Blue Yonder (Mar 2024 – Present): architected a Flowable-based cloud-native workflow platform for 20+ teams on Azure.
+- Senior Software Engineer at Deloitte (Feb 2015 – Mar 2021): inventory replenishment and subscription management platforms.
+- Software Engineer at Infosys (Oct 2011 – Jan 2015): reusable B2C commerce capabilities on SAP Commerce (Hybris).
+
+## Projects
+
+- Cloud-Native Workflow Platform (Blue Yonder)
+- Automated Inventory Replenishment (Deloitte)
+- Subscription Management Platform (Deloitte)
+- Reusable B2C Commerce Capabilities (Infosys)
+- RingBlock — Pattern Call Blocker (Android, open source)
+- GoogleDoodle Automator (YouTube content automation)
+
+## Books
+
+Tech: Designing Data-Intensive Applications, Building Microservices, Effective Java, Site Reliability Engineering.
+Non-Fiction: The Phoenix Project, Deep Work, The Pragmatic Programmer, Thinking in Systems.
+Fiction: Project Hail Mary, The Three-Body Problem, The Name of the Wind, Dune.
+
+## Pages
+
+- Home: https://giridhardhatric.me/
+- Projects: https://giridhardhatric.me/projects
+- Personal Projects: https://giridhardhatric.me/personal-projects
+- Home Server: https://giridhardhatric.me/home-server
+- Books: https://giridhardhatric.me/books
+- Blog: https://giridhardhatric.me/blog
+
+## Contact
+
+- Email: dhatric@gmail.com
+- LinkedIn: https://linkedin.com/in/giridhar-dhatric
+- GitHub: https://github.com/dhatric

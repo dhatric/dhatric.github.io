@@ -44,6 +44,9 @@ const config: Config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
+        sitemap: {
+          lastmod: 'date',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -53,7 +56,11 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
-    metadata: [{ property: 'og:type', content: 'website' }],
+    metadata: [
+      { property: 'og:type', content: 'website' },
+      { name: 'author', content: 'Giridhar Dhatric' },
+      { name: 'twitter:site', content: '@giridhar_dhatric' },
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,

@@ -2,7 +2,41 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import JsonLd from '../components/JsonLd';
 import styles from './index.module.css';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Giridhar Dhatric',
+  jobTitle: 'Staff Software Engineer',
+  url: 'https://giridhardhatric.me/',
+  email: 'mailto:dhatric@gmail.com',
+  sameAs: [
+    'https://linkedin.com/in/giridhar-dhatric',
+    'https://github.com/dhatric',
+  ],
+  knowsAbout: [
+    'Distributed Systems',
+    'Cloud-Native SaaS',
+    'Event-Driven Architecture',
+    'Microservices',
+    'Workflow Platforms',
+    'Java',
+    'Spring Boot',
+    'Microsoft Azure',
+    'Kubernetes',
+    'Observability',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Giridhar Dhatric',
+  url: 'https://giridhardhatric.me/',
+  inLanguage: 'en',
+};
 
 const competencies = [
   {
@@ -190,6 +224,8 @@ export default function Home(): React.JSX.Element {
       title={siteConfig.title}
       description="Staff Software Engineer — Cloud-Native Platforms, Distributed Systems, and Workflow Automation"
     >
+      <JsonLd data={personSchema} />
+      <JsonLd data={websiteSchema} />
       <Hero />
       <main>
         <Competencies />

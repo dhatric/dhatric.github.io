@@ -1,9 +1,12 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import PageHeader from '../components/PageHeader';
+import JsonLd from '../components/JsonLd';
 
 interface Book {
   title: string;
+  /** Author, used only in structured data (not displayed on the page). */
+  author: string;
   /** Path to the cover image under /static/img/books/. */
   cover: string;
 }
@@ -21,10 +24,10 @@ const sections: BookSection[] = [
     title: 'Tech Books',
     description: 'Engineering, architecture, and systems reading that shapes how I build platforms.',
     books: [
-      { title: 'Designing Data-Intensive Applications', cover: 'img/books/ddia.jpg' },
-      { title: 'Building Microservices', cover: 'img/books/building-microservices.jpg' },
-      { title: 'Effective Java', cover: 'img/books/effective-java.jpg' },
-      { title: 'Site Reliability Engineering', cover: 'img/books/sre.jpg' },
+      { title: 'Designing Data-Intensive Applications', author: 'Martin Kleppmann', cover: 'img/books/ddia.jpg' },
+      { title: 'Building Microservices', author: 'Sam Newman', cover: 'img/books/building-microservices.jpg' },
+      { title: 'Effective Java', author: 'Joshua Bloch', cover: 'img/books/effective-java.jpg' },
+      { title: 'Site Reliability Engineering', author: 'Betsy Beyer, Chris Jones, Jennifer Petoff & Niall Richard Murphy', cover: 'img/books/sre.jpg' },
     ],
   },
   {
@@ -32,10 +35,10 @@ const sections: BookSection[] = [
     title: 'Non-Fiction',
     description: 'Books on leadership, productivity, and how complex human systems really work.',
     books: [
-      { title: 'The Phoenix Project', cover: 'img/books/phoenix-project.jpg' },
-      { title: 'Deep Work', cover: 'img/books/deep-work.jpg' },
-      { title: 'The Pragmatic Programmer', cover: 'img/books/pragmatic-programmer.jpg' },
-      { title: 'Thinking in Systems', cover: 'img/books/thinking-in-systems.jpg' },
+      { title: 'The Phoenix Project', author: 'Gene Kim, Kevin Behr & George Spafford', cover: 'img/books/phoenix-project.jpg' },
+      { title: 'Deep Work', author: 'Cal Newport', cover: 'img/books/deep-work.jpg' },
+      { title: 'The Pragmatic Programmer', author: 'Andrew Hunt & David Thomas', cover: 'img/books/pragmatic-programmer.jpg' },
+      { title: 'Thinking in Systems', author: 'Donella H. Meadows', cover: 'img/books/thinking-in-systems.jpg' },
     ],
   },
   {
@@ -43,13 +46,37 @@ const sections: BookSection[] = [
     title: 'Fiction',
     description: 'Novels and stories I read for fun — and the occasional good idea that leaks into work.',
     books: [
-      { title: 'Project Hail Mary', cover: 'img/books/project-hail-mary.jpg' },
-      { title: 'The Three-Body Problem', cover: 'img/books/three-body-problem.jpg' },
-      { title: 'The Name of the Wind', cover: 'img/books/name-of-the-wind.jpg' },
-      { title: 'Dune', cover: 'img/books/dune.jpg' },
+      { title: 'Project Hail Mary', author: 'Andy Weir', cover: 'img/books/project-hail-mary.jpg' },
+      { title: 'The Three-Body Problem', author: 'Liu Cixin', cover: 'img/books/three-body-problem.jpg' },
+      { title: 'The Name of the Wind', author: 'Patrick Rothfuss', cover: 'img/books/name-of-the-wind.jpg' },
+      { title: 'Dune', author: 'Frank Herbert', cover: 'img/books/dune.jpg' },
     ],
   },
 ];
+
+const allBooks = sections.flatMap((section) => section.books);
+
+const booksSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Books — Giridhar Dhatric',
+  url: 'https://giridhardhatric.me/books',
+  inLanguage: 'en',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: allBooks.map((book, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Book',
+        name: book.title,
+        author: { '@type': 'Person', name: book.author },
+        image: `https://giridhardhatric.me/${book.cover}`,
+        url: 'https://giridhardhatric.me/books',
+      },
+    })),
+  },
+};
 
 function BookCard({ book }: { book: Book }) {
   return (
@@ -66,6 +93,7 @@ export default function Books(): React.JSX.Element {
       title="Books"
       description="Tech books, non-fiction, and fiction that have shaped how I think and build."
     >
+      <JsonLd data={booksSchema} />
       <main style={{ padding: '3rem 0' }}>
         <div className="container">
           <PageHeader
