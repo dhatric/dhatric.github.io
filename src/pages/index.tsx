@@ -115,8 +115,7 @@ function Hero() {
         <h1 className={styles.heroTitle}>Giridhar Dhatric</h1>
         <p className={styles.heroSubtitle}>Staff Software Engineer</p>
         <p className={styles.heroSummary}>
-          Designing cloud-native platforms, distributed systems, and workflow automation.
-          Bridging robust backend architectures with emerging RAG and agentic workflows to enable engineering teams to build at scale.
+          Designing cloud-native platforms, distributed systems, and workflow automation that let engineering teams build and ship at scale — from multi-tenant execution engines to end-to-end observability.
         </p>
         <div className="cta-row" style={{ marginTop: '2rem' }}>
           <Link className="cta-btn" to="/projects">
@@ -184,7 +183,7 @@ function Experience() {
           <div className={styles.timelineItem}>
             <div className={styles.timelineMeta}>
               <span className={styles.timelineCompany}>Blue Yonder</span>
-              <span className={styles.timelinePeriod}>Mar 2024 – Present</span>
+              <span className={styles.timelinePeriod}>Mar 2021 – Present</span>
             </div>
             <div className={styles.timelineRole}>Staff Software Engineer</div>
             <p>

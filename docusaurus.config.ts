@@ -78,6 +78,7 @@ const config: Config = {
         { to: '/home-server', label: 'Home Server', position: 'left' },
         { to: '/books', label: 'Books', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/resume', label: 'Resume', position: 'left' },
         {
           href: 'https://www.linkedin.com/in/giridhar-dhatric/',
           label: 'LinkedIn',
@@ -124,10 +125,8 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
+            { label: 'Resume', to: '/resume' },
+            { label: 'Blog', to: '/blog' },
           ],
         },
       ],

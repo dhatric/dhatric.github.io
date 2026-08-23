@@ -7,7 +7,7 @@ import type { CardItem } from '../types/card';
 const projects: CardItem[] = [
   {
     title: 'Cloud-Native Workflow Platform',
-    meta: 'Blue Yonder · 2024 – Present',
+    meta: 'Blue Yonder · Mar 2021 – Present',
     description:
       'Architected a cloud-native workflow platform using Flowable, enabling engineering teams to rapidly design, deploy, version, and execute enterprise workflows with secure tenant isolation, authentication, and governance controls. Designed end-to-end platform observability and optimized scalability, database, and asynchronous workloads.',
     impact: 'Enabled 20+ teams (reducing feature time-to-market by 40% and onboarding by 50%), reduced MTTD by 45%, and improved database query throughput by 35% with 99.99% operational reliability.',
