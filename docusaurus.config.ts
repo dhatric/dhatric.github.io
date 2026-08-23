@@ -68,6 +68,7 @@ const config: Config = {
         { to: '/projects', label: 'Projects', position: 'left' },
         { to: '/personal-projects', label: 'Personal Projects', position: 'left' },
         { to: '/home-server', label: 'Home Server', position: 'left' },
+        { to: '/books', label: 'Books', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://www.linkedin.com/in/giridhar-dhatric/',
@@ -91,6 +92,7 @@ const config: Config = {
             { label: 'Projects', to: '/projects' },
             { label: 'Personal Projects', to: '/personal-projects' },
             { label: 'Home Server', to: '/home-server' },
+            { label: 'Books', to: '/books' },
             { label: 'Blog', to: '/blog' },
           ],
         },
