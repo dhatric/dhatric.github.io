@@ -1,29 +1,30 @@
 # Giridhar Dhatric
 
-> Staff Software Engineer — Cloud-Native Platforms, Distributed Systems, and Workflow Automation.
-> Hyderabad, India. Designing cloud-native platforms, distributed systems, and workflow automation.
+> Staff Software Engineer — Cloud-Native, Event-Driven Distributed Systems (Java, Spring Boot, Kubernetes, Kafka).
+> Hyderabad, India. Multi-tenant service extensibility platform on Flowable: Java SDK + secure sandbox, 20+ teams, 1,000 workflow executions/sec (100ms p95).
 
 ## Key topics
 
-- Cloud-native platforms and multi-tenant SaaS
-- Distributed systems and event-driven architecture
-- Workflow orchestration (Flowable / BPMN)
-- Java, Spring Boot, and backend engineering
-- Microsoft Azure, Kubernetes, Docker
-- Observability (OpenTelemetry, ELK, Prometheus, Grafana)
+- Cloud-native platforms and multi-tenant SaaS (service extensibility, Java SDK)
+- Distributed systems and event-driven architecture (Kafka, RabbitMQ)
+- Workflow orchestration (Flowable Enterprise / BPMN, Camunda/Temporal evaluation)
+- Java, Spring Boot, GraphQL, gRPC, Python and backend engineering
+- Azure, Kubernetes, Docker
+- Observability (OpenTelemetry, ELK, Prometheus, Grafana) + PostgreSQL tuning (PgBouncer, HikariCP)
 
 ## Experience
 
-- Staff Software Engineer at Blue Yonder (Mar 2024 – Present): architected a Flowable-based cloud-native workflow platform for 20+ teams on Azure.
-- Senior Software Engineer at Deloitte (Feb 2015 – Mar 2021): inventory replenishment and subscription management platforms.
-- Software Engineer at Infosys (Oct 2011 – Jan 2015): reusable B2C commerce capabilities on SAP Commerce (Hybris).
+- Staff Software Engineer at Blue Yonder (Mar 2021 – Present): led team of 8 building a Flowable-based multi-tenant service extensibility platform (Java SDK, gRPC Groovy sandbox) for 20+ teams; 1,000 exec/sec at 100ms p95.
+- Senior Software Engineer at Deloitte (Feb 2015 – Mar 2021): ExxonMobil B2B portal — ML-driven stock replenishment (-20% shortages), Spring Boot + RabbitMQ subscriptions (+15% recurring), buy-back/marine ordering.
+- Software Engineer at Infosys (Oct 2011 – Jan 2015): Singtel B2C mobile/SIM retail on SAP Commerce (Hybris) — cart restoration, Solr-indexed search.
 
 ## Projects
 
-- Cloud-Native Workflow Platform (Blue Yonder)
-- Automated Inventory Replenishment (Deloitte)
-- Subscription Management Platform (Deloitte)
-- Reusable B2C Commerce Capabilities (Infosys)
+- Multi-Tenant Service Extensibility Platform (Blue Yonder)
+- Automated Stock Replenishment, ExxonMobil B2B Portal (Deloitte)
+- Subscription Ordering System (Deloitte)
+- Buy-Back & Marine Ordering (Deloitte)
+- Reusable B2C Commerce Capabilities, Singtel (Infosys)
 - RingBlock — Pattern Call Blocker (Android, open source)
 - GoogleDoodle Automator (YouTube content automation)
 

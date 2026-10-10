@@ -6,48 +6,58 @@ import type { CardItem } from '../types/card';
 
 const projects: CardItem[] = [
   {
-    title: 'Cloud-Native Workflow Platform',
+    title: 'Multi-Tenant Service Extensibility Platform',
     meta: 'Blue Yonder · Mar 2021 – Present',
     description:
-      'Architected a cloud-native workflow platform using Flowable, enabling engineering teams to rapidly design, deploy, version, and execute enterprise workflows with secure tenant isolation, authentication, and governance controls. Designed end-to-end platform observability and optimized scalability, database, and asynchronous workloads.',
-    impact: 'Enabled 20+ teams (reducing feature time-to-market by 40% and onboarding by 50%), reduced MTTD by 45%, and improved database query throughput by 35% with 99.99% operational reliability.',
+      'Led Flowable vs. Camunda vs. Temporal evaluation and the OSS-to-Enterprise migration, then architected a multi-tenant service extensibility platform on Flowable Enterprise (Spring Boot, Kubernetes) with a Java SDK that hooks into the REST request lifecycle — letting 20+ teams attach customer-specific behavior as workflows without modifying the core product. Designed a secure gRPC-based Groovy sandbox (static-analysis guardrails, tenant isolation, auth, encrypted tokens, 400 MB per-execution cap), added sync + Kafka-based async invocation, and built dashboards with automated 5xx alerting to Jira and on-call.',
+    impact: 'Adopted by 20+ engineering teams, reducing custom development effort by 80%; sustained 1,000 workflow executions/sec at 100ms p95 in JMeter/BlazeMeter load tests (PostgreSQL + PgBouncer/HikariCP tuning).',
     tags: [
       'Java',
       'Spring Boot',
       'Flowable',
-      'Azure',
       'Kubernetes',
+      'gRPC',
+      'Groovy',
+      'Apache Kafka',
+      'PostgreSQL',
+      'PgBouncer',
       'OpenTelemetry',
-      'ELK Stack',
       'Prometheus',
       'Grafana',
-      'Database Optimization',
-      'Performance Tuning',
+      'ELK Stack',
     ],
   },
   {
-    title: 'Automated Inventory Replenishment',
-    meta: 'Deloitte · 2015 – 2021',
+    title: 'Automated Stock Replenishment (ExxonMobil B2B Portal)',
+    meta: 'Deloitte · Feb 2015 – Mar 2021',
     description:
-      'Architected an automated inventory replenishment platform that transformed demand forecasting into an event-driven workflow, integrating complex business forecasting requirements into scalable technical solutions.',
-    impact: 'Reduced stock shortages by 20% while improving inventory availability and sales performance.',
-    tags: ['Java', 'Spring Boot', 'Event-Driven', 'Workflow Automation', 'Demand Forecasting'],
+      'Architected and implemented an automated stock replenishment module for ExxonMobil’s B2B ordering portal (SAP Commerce), integrating the data science team’s ML demand forecasts to predict order quantities and place replenishment orders automatically through an event-driven workflow.',
+    impact: 'Helped reduce stock shortages by 20%.',
+    tags: ['Java', 'SAP Commerce', 'Event-Driven', 'ML Demand Forecasting', 'B2B Ordering'],
   },
   {
-    title: 'Subscription Management Platform',
-    meta: 'Deloitte · 2015 – 2021',
+    title: 'Subscription Ordering System',
+    meta: 'Deloitte · Feb 2015 – Mar 2021',
     description:
-      'Designed and developed a subscription management platform using Spring Boot and RabbitMQ, enabling asynchronous order processing and scalable event-driven communication.',
+      'Designed the portal’s subscription ordering system (Spring Boot, RabbitMQ), letting customers schedule recurring orders daily, weekly, or monthly with asynchronous order processing.',
     impact: 'Drove a 15% increase in recurring order volume.',
     tags: ['Java', 'Spring Boot', 'RabbitMQ', 'Event-Driven', 'Asynchronous Processing'],
   },
   {
-    title: 'Reusable B2C Commerce Capabilities',
-    meta: 'Infosys · 2011 – 2015',
+    title: 'Buy-Back & Marine Ordering',
+    meta: 'Deloitte · Feb 2015 – Mar 2021',
     description:
-      'Developed reusable commerce capabilities on SAP Commerce (Hybris) for large-scale B2C retail platforms, including configurable product catalogs, product bundling, and order management features.',
-    impact: 'Enabled modular and configurable product features across major retail clients.',
-    tags: ['SAP Commerce (Hybris)', 'Java', 'B2C Commerce', 'Order Management'],
+      'Built buy-back and marine ordering features, including an ocean-shipment flow that creates two orders per marine order, as part of a two-year team effort delivering B2B ordering on SAP Commerce.',
+    impact: 'Shipped B2B ordering capabilities for marine/buy-back flows on SAP Commerce.',
+    tags: ['SAP Commerce (Hybris)', 'Java', 'B2B Commerce', 'Order Management'],
+  },
+  {
+    title: 'Reusable B2C Commerce Capabilities (Singtel)',
+    meta: 'Infosys · Oct 2011 – Jan 2015',
+    description:
+      'Developed reusable commerce capabilities on SAP Commerce (Hybris) for Singtel’s B2C mobile/SIM retail platform — including cart restoration and Solr-indexed product search.',
+    impact: 'Enabled modular, reusable commerce features for a large-scale B2C retail platform.',
+    tags: ['SAP Commerce (Hybris)', 'Java', 'B2C Commerce', 'Solr'],
   },
 ];
 
