@@ -21,11 +21,15 @@ const personSchema = {
     'Cloud-Native SaaS',
     'Event-Driven Architecture',
     'Microservices',
+    'SaaS Multi-tenancy',
     'Workflow Platforms',
+    'Flowable',
     'Java',
     'Spring Boot',
+    'Apache Kafka',
     'Microsoft Azure',
     'Kubernetes',
+    'PostgreSQL',
     'Observability',
   ],
 };
@@ -40,24 +44,20 @@ const websiteSchema = {
 
 const competencies = [
   {
-    area: 'Architecture & Platforms',
-    skills: 'Distributed Systems, Cloud-Native SaaS, Event-Driven Architecture, Microservices, Workflow Platforms, Developer Platforms',
-  },
-  {
-    area: 'Backend & Observability',
-    skills: 'Java, Spring Boot, REST APIs, GraphQL, Python, Flowable, OpenTelemetry, ELK Stack, Prometheus, Grafana',
+    area: 'Languages & Frameworks',
+    skills: 'Java, Python, Spring Boot, GraphQL, gRPC',
   },
   {
     area: 'Cloud & Infrastructure',
-    skills: 'Microsoft Azure, Kubernetes, Docker, Azure Storage/Event Hubs/Functions, CI/CD, Infrastructure Automation',
+    skills: 'Azure, Kubernetes, Docker, OpenTelemetry, Prometheus, Grafana, ELK Stack',
   },
   {
     area: 'Data & Messaging',
-    skills: 'Apache Kafka, RabbitMQ, SQL Server, PostgreSQL, MongoDB',
+    skills: 'Apache Kafka, RabbitMQ, PostgreSQL, MongoDB',
   },
   {
-    area: 'Leadership & Governance',
-    skills: 'Technical Leadership, Mentorship, Engineering Governance',
+    area: 'Architecture',
+    skills: 'Microservices, Event-Driven Architecture, Distributed Systems, SaaS Multi-tenancy',
   },
 ];
 
@@ -115,7 +115,7 @@ function Hero() {
         <h1 className={styles.heroTitle}>Giridhar Dhatric</h1>
         <p className={styles.heroSubtitle}>Staff Software Engineer</p>
         <p className={styles.heroSummary}>
-          Designing cloud-native platforms, distributed systems, and workflow automation that let engineering teams build and ship at scale — from multi-tenant execution engines to end-to-end observability.
+          Staff Software Engineer with 15 years of experience architecting cloud-native, event-driven distributed systems — including a multi-tenant service extensibility platform on Flowable adopted by 20+ teams and load-tested at 1,000 workflow executions/sec (100ms p95).
         </p>
         <div className="cta-row" style={{ marginTop: '2rem' }}>
           <Link className="cta-btn" to="/projects">
@@ -185,9 +185,9 @@ function Experience() {
               <span className={styles.timelineCompany}>Blue Yonder</span>
               <span className={styles.timelinePeriod}>Mar 2021 – Present</span>
             </div>
-            <div className={styles.timelineRole}>Staff Software Engineer</div>
+            <div className={styles.timelineRole}>Staff Software Engineer · Team of 8</div>
             <p>
-              Architected a Flowable-based cloud-native workflow platform for 20+ teams, cutting feature time-to-market by 40%. Engineered a secure, multi-tenant execution framework, and designed platform observability using OpenTelemetry, ELK, and Prometheus (reducing MTTD by 45%).
+              Led Flowable vs. Camunda vs. Temporal evaluation and the OSS-to-Enterprise migration, then architected a multi-tenant service extensibility platform (Spring Boot, Kubernetes) with a Java SDK hooking into the REST request lifecycle and a secure gRPC-based Groovy sandbox for untrusted customer code. Adopted by 20+ teams, cutting custom development effort by 80%; sustained 1,000 workflow executions/sec at 100ms p95 (PostgreSQL + PgBouncer/HikariCP tuning, JMeter/BlazeMeter).
             </p>
           </div>
           <div className={styles.timelineItem}>
@@ -197,7 +197,7 @@ function Experience() {
             </div>
             <div className={styles.timelineRole}>Senior Software Engineer</div>
             <p>
-              Architected an event-driven inventory replenishment platform that reduced stock shortages by 20%. Designed a subscription management platform using Spring Boot and RabbitMQ, driving a 15% increase in recurring order volume.
+              Built ExxonMobil's B2B ordering portal features on SAP Commerce: ML-driven automated stock replenishment (20% fewer stock shortages) and a Spring Boot + RabbitMQ subscription ordering system with daily/weekly/monthly recurring orders (+15% recurring volume), plus buy-back and marine/ocean-shipment ordering.
             </p>
           </div>
           <div className={styles.timelineItem}>
@@ -207,7 +207,7 @@ function Experience() {
             </div>
             <div className={styles.timelineRole}>Software Engineer</div>
             <p>
-              Developed reusable commerce capabilities on SAP Commerce (Hybris), enabling configurable product catalog, product bundling, and order management features for B2C retail platforms.
+              Developed reusable commerce capabilities on SAP Commerce (Hybris) for Singtel's B2C mobile/SIM retail platform — including cart restoration and Solr-indexed product search.
             </p>
           </div>
         </div>
