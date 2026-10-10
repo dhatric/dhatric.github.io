@@ -9,6 +9,8 @@ interface Book {
   author: string;
   /** Path to the cover image under /static/img/books/. */
   cover: string;
+  /** Optional badge shown under the title, e.g. "Currently reading". */
+  status?: string;
 }
 
 interface BookSection {
@@ -22,34 +24,33 @@ const sections: BookSection[] = [
   {
     key: 'tech-books',
     title: 'Tech Books',
-    description: 'Engineering, architecture, and systems reading that shapes how I build platforms.',
+    description: 'Engineering and AI reading that shapes how I build platforms.',
     books: [
-      { title: 'Designing Data-Intensive Applications', author: 'Martin Kleppmann', cover: 'img/books/ddia.jpg' },
-      { title: 'Building Microservices', author: 'Sam Newman', cover: 'img/books/building-microservices.jpg' },
-      { title: 'Effective Java', author: 'Joshua Bloch', cover: 'img/books/effective-java.jpg' },
-      { title: 'Site Reliability Engineering', author: 'Betsy Beyer, Chris Jones, Jennifer Petoff & Niall Richard Murphy', cover: 'img/books/sre.jpg' },
+      { title: 'AI Engineering', author: 'Chip Huyen', cover: 'img/books/ai-engineering.jpg' },
+      { title: 'Designing Data-Intensive Applications', author: 'Martin Kleppmann', cover: 'img/books/ddia.jpg', status: 'Currently reading' },
     ],
   },
   {
     key: 'non-fiction',
     title: 'Non-Fiction',
-    description: 'Books on leadership, productivity, and how complex human systems really work.',
+    description: 'History, science, and society — big ideas about humankind and how the world works.',
     books: [
-      { title: 'The Phoenix Project', author: 'Gene Kim, Kevin Behr & George Spafford', cover: 'img/books/phoenix-project.jpg' },
-      { title: 'Deep Work', author: 'Cal Newport', cover: 'img/books/deep-work.jpg' },
-      { title: 'The Pragmatic Programmer', author: 'Andrew Hunt & David Thomas', cover: 'img/books/pragmatic-programmer.jpg' },
-      { title: 'Thinking in Systems', author: 'Donella H. Meadows', cover: 'img/books/thinking-in-systems.jpg' },
+      { title: 'Sapiens', author: 'Yuval Noah Harari', cover: 'img/books/sapiens.jpg' },
+      { title: 'Homo Deus', author: 'Yuval Noah Harari', cover: 'img/books/homo-deus.jpg' },
+      { title: '21 Lessons for the 21st Century', author: 'Yuval Noah Harari', cover: 'img/books/21-lessons.jpg' },
+      { title: 'Animal Farm', author: 'George Orwell', cover: 'img/books/animal-farm.jpg' },
+      { title: 'The Song of the Cell', author: 'Siddhartha Mukherjee', cover: 'img/books/song-of-the-cell.jpg' },
     ],
   },
   {
     key: 'fiction',
     title: 'Fiction',
-    description: 'Novels and stories I read for fun — and the occasional good idea that leaks into work.',
+    description: 'Thrillers and sci-fi I read for fun — and the occasional good idea that leaks into work.',
     books: [
-      { title: 'Project Hail Mary', author: 'Andy Weir', cover: 'img/books/project-hail-mary.jpg' },
       { title: 'The Three-Body Problem', author: 'Liu Cixin', cover: 'img/books/three-body-problem.jpg' },
-      { title: 'The Name of the Wind', author: 'Patrick Rothfuss', cover: 'img/books/name-of-the-wind.jpg' },
-      { title: 'Dune', author: 'Frank Herbert', cover: 'img/books/dune.jpg' },
+      { title: 'The Silent Patient', author: 'Alex Michaelides', cover: 'img/books/silent-patient.jpg' },
+      { title: 'Verity', author: 'Colleen Hoover', cover: 'img/books/verity.jpg' },
+      { title: 'Recursion', author: 'Blake Crouch', cover: 'img/books/recursion.jpg' },
     ],
   },
 ];
@@ -83,6 +84,11 @@ function BookCard({ book }: { book: Book }) {
     <article className="book-card" aria-label={book.title}>
       <img className="book-cover" src={book.cover} alt={`Cover of ${book.title}`} loading="lazy" />
       <h3 className="book-title">{book.title}</h3>
+      {book.status && (
+        <span className="tag-pill" style={{ marginTop: '0.4rem' }}>
+          {book.status}
+        </span>
+      )}
     </article>
   );
 }

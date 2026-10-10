@@ -30,9 +30,9 @@
 
 ## Books
 
-Tech: Designing Data-Intensive Applications, Building Microservices, Effective Java, Site Reliability Engineering.
-Non-Fiction: The Phoenix Project, Deep Work, The Pragmatic Programmer, Thinking in Systems.
-Fiction: Project Hail Mary, The Three-Body Problem, The Name of the Wind, Dune.
+Tech: AI Engineering (Chip Huyen); currently reading Designing Data-Intensive Applications.
+Non-Fiction: Sapiens, Homo Deus, 21 Lessons for the 21st Century (Yuval Noah Harari), Animal Farm, The Song of the Cell.
+Fiction: The Three-Body Problem, The Silent Patient, Verity, Recursion.
 
 ## Pages
 
